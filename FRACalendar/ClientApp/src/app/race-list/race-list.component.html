@@ -1,0 +1,16 @@
+<h1 id="tableLabel">Race List</h1>
+
+<p *ngIf="!races"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="races">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let race of races">
+      <td>{{ race.name }}</td>
+    </tr>
+  </tbody>
+</table>
