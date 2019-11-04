@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29403.142
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FRACalendar", "FRACalendar\FRACalendar.csproj", "{616E6D21-3714-46AA-9AC6-68CD9A04E9FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FRACalendar.Data", "FRACalendar.Data\FRACalendar.Data.csproj", "{D9C36AFB-5392-4656-832D-41100FA5B8EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{616E6D21-3714-46AA-9AC6-68CD9A04E9FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{616E6D21-3714-46AA-9AC6-68CD9A04E9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{616E6D21-3714-46AA-9AC6-68CD9A04E9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{616E6D21-3714-46AA-9AC6-68CD9A04E9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9C36AFB-5392-4656-832D-41100FA5B8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9C36AFB-5392-4656-832D-41100FA5B8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9C36AFB-5392-4656-832D-41100FA5B8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9C36AFB-5392-4656-832D-41100FA5B8EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11152575-6CA3-4993-A370-A93E392A94DE}
+	EndGlobalSection
+EndGlobal
