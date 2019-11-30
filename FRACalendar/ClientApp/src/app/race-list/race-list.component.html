@@ -1,7 +1,9 @@
 <h1 id="tableLabel">Race List</h1>
 
 <p *ngIf="!races"><em>Loading...</em></p>
-
+<div class="btn-toolbar">
+<button class="btn btn-sm btn-secondary" routerLink="/create-race-item">Create</button>
+</div>
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="races">
   <thead>
     <tr>
@@ -10,6 +12,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let race of races">
+      <td>
+        <a routerLink="/edit-race-item/{{race.id}}" class="btn sm-btn">Edit</a>
+        <button (click)="deleteItem(race.id)" class="btn sm-btn">Delete</button>
+      </td>
       <td>{{ race.name }}</td>
     </tr>
   </tbody>

@@ -1,0 +1,16 @@
+<h1 id="tableLabel">Update Race</h1>
+
+<p *ngIf="!RaceItem"><em>Loading...</em></p>
+
+
+<form class="container" *ngIf="RaceItem" [formGroup]="raceForm" (ngSubmit)="onSubmit()">
+  <div><label>Name</label><input type="text" formControlName="name" class="form-control"/></div>
+  <div><label>Price</label><input type="text" formControlName="price" class="form-control"/></div>
+  <div><label>Race Date</label><input type="date" formControlName="racedate" class="form-control"/></div>
+  <div class="btn-toolbar">
+    <button class="btn btn-sm btn-primary" type="submit" [disabled]="!raceForm.valid">Save</button>
+    <button class="btn btn-sm btn-secondary" (click)="close()">Close</button>
+</div>
+</form>
+
+

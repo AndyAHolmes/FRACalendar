@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DataService } from '../services/data-service';
 
 @Component({
   selector: 'race-list',
@@ -7,18 +7,27 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class RaceListComponent {
   public races: Race[];
- 
-  httpOptions = {
-    headers: new HttpHeaders({ 
-      'Access-Control-Allow-Origin':'*'
-    })
-  };
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    debugger;
-    http.get<Race[]>(baseUrl + 'api/race/list', this.httpOptions).subscribe(result => {
-      debugger;
-      this.races = result;
+ private _dataService: DataService;
+  private _baseUrl: string;
+  constructor(dataService: DataService,@Inject('BASE_URL')baseUrl: string) {
+    this._dataService = dataService;
+    this._baseUrl = baseUrl;
+  }
+
+  ngInit()
+  {
+    this.load();
+  
+  }
+  load(){
+    this._dataService.GetData(this._baseUrl + 'api/race/list').subscribe(result => {
+      this.races = result as Race[];
     }, error => console.log(error));
+  }
+
+  public deleteItem(id)
+  {
+    this._dataService.Delete(this._baseUrl + 'api/race/'+id).subscribe(r=>{this.load()},error=>console.log(error));
   }
 }
 

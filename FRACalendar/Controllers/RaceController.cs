@@ -32,27 +32,34 @@ namespace FRACalendar.Controllers
 
         // GET: api/Race/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public Race Get(int id)
         {
-            return "value";
+            return _raceRepository.AllRaces.Select(r=>new Race { Id = r.Id, Name = r.Name, Price = r.Price, RaceDate = r.RaceDate }).FirstOrDefault(r=>r.Id == id);
         }
 
         // POST: api/Race
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] Race value)
         {
+            
+            _raceRepository.Add(new Data.Race() { Name = value.Name, Price = value.Price, RaceDate = value.RaceDate });
+            return Ok();
         }
 
         // PUT: api/Race/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, [FromBody] Race value)
         {
+            _raceRepository.Update(new Data.Race() {Id=id, Name = value.Name, Price = value.Price, RaceDate = value.RaceDate });
+            return Ok();
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            _raceRepository.Delete(id);
+            return Ok();
         }
     }
 }
