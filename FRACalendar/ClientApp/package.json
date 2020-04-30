@@ -27,7 +27,7 @@
     "bootstrap": "^4.3.1",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.6.5",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "ngx-build-plus": "^9.0.2",
     "oidc-client": "^1.9.0",
     "popper.js": "^1.14.3",
